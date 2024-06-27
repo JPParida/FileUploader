@@ -1,7 +1,7 @@
 """Test S3 bucket uploader"""
 
 import pytest
-from unittest.mock import patch
+from unittest.mock import patch # Mocking library for testing
 from uploader.s3_bucket_uploader import S3BucketUploader
 
 @patch('uploader.s3_bucket_uploader.boto3.client')
@@ -13,9 +13,9 @@ def test_upload_file(mock_boto_client):
         mock_boto_client : Mock object for boto3 client.
     """
 
-    mock_boto_client().upload_file.return_value = None
+    mock_boto_client().upload_file.return_value = None # Mocking upload_file method
 
     s3_uploader = S3BucketUploader("test_bucket")
     s3_uploader.upload_file("test_file.txt")
-
+    #Asserting the method was called once
     mock_boto_client().upload_file.assert_called_once_with("test_file.txt", "test_bucket", "test_file.txt")

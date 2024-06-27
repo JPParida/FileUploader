@@ -1,10 +1,10 @@
 """ INIT """
 
 import sys
+from .config import Constants
 from .file_reader import FileReader
 from .s3_bucket_uploader import S3BucketUploader
 from .cloud_uploader import GoogleCloudeStorageUploader
-from .config import Constants
 
 def main(root_dir):
     """ 
@@ -25,4 +25,4 @@ def main(root_dir):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1])  # Running the main function with the directory path argument

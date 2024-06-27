@@ -19,9 +19,7 @@ pip install -r requirements.txt
 pytest --cov=uploader tests/
 ```
 
-#### Run
+#### Run the module by providing the root directory as an argument
 ```
-Run the module by providing the root directory as an argument
-
 python -m uploader <directory_path>
 ```
